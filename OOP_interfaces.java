@@ -42,16 +42,16 @@ public class OOP_interfaces {
 
     }
 
-    public static Person createHunter(int hp, String name, int endurance){
+    private static Person createHunter(int hp, String name, int endurance){
         return new Person(hp, name,"Onion", endurance,0,0);
     }
 
-    public static Person createWarrior(double h, String name, int fury){
+    private static Person createWarrior(double h, String name, int fury){
         int hp = (int) h;
         return new Person(hp, name, "Sword",0,0, fury);
     }
 
-    public static Person createDwarf(int hp, String name, int mana){
+    private static Person createDwarf(int hp, String name, int mana){
         return new Person(hp, name, "Hex",0, mana,0);
     }
 
