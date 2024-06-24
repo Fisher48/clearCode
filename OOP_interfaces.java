@@ -55,7 +55,7 @@ public class OOP_interfaces {
         return new Person(hp, name, "Hex",0, mana,0);
     }
 
-    public static class Items {
+    private static class Items {
         protected String name;
         protected int armor;
         protected int hp;
@@ -67,13 +67,13 @@ public class OOP_interfaces {
         }
     }
 
-    public static class Hands extends Items {
+    private static class Hands extends Items {
         public Hands(String name, int armor, int hp) {
             super(name, armor, hp);
         }
     }
 
-    public static class Foot extends Items {
+    private static class Foot extends Items {
         public Foot(String name, int armor, int hp) {
             super(name, armor, hp);
         }
