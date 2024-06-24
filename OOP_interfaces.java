@@ -22,7 +22,7 @@ public class OOP_interfaces {
         }
 
 
-        public void equip(Hands Gloves){
+        public void equip(Hands Gloves) {
             if (Gloves != null) {
                 hp += Gloves.hp; // если не пусто, то идет прирост ХП для персонажа
             } else {
@@ -31,7 +31,7 @@ public class OOP_interfaces {
             hands = Gloves;
         }
 
-        public void equip(Foot Boots){
+        public void equip(Foot Boots) {
             if (Boots != null) {
                 hp += Boots.hp; // если не пусто, то идет прирост ХП для персонажа
             } else {
@@ -40,19 +40,18 @@ public class OOP_interfaces {
             foot = Boots;
         }
 
-    }
+        private static Person createHunter(int hp, String name, int endurance) {
+            return new Person(hp, name, "Onion", endurance, 0, 0);
+        }
 
-    private static Person createHunter(int hp, String name, int endurance){
-        return new Person(hp, name,"Onion", endurance,0,0);
-    }
+        private static Person createWarrior(int hp, String name, double fury) {
+            int f = (int) fury;
+            return new Person(hp, name, "Sword", 0, 0, f);
+        }
 
-    private static Person createWarrior(double h, String name, int fury){
-        int hp = (int) h;
-        return new Person(hp, name, "Sword",0,0, fury);
-    }
-
-    private static Person createDwarf(int hp, String name, int mana){
-        return new Person(hp, name, "Hex",0, mana,0);
+        private static Person createDwarf(int hp, String name, int mana) {
+            return new Person(hp, name, "Hex", 0, mana, 0);
+        }
     }
 
     private static class Items {
@@ -80,14 +79,14 @@ public class OOP_interfaces {
     }
 
     public static void main(String[] args){
-        Person warrior = createWarrior(1000.55,"Alex",100);
+        Person warrior = Person.createWarrior(1000,"Alex",100.55);
         warrior.equip(new Hands("Перчатки",100,100));
         warrior.equip(new Foot("Бегунки",120,145));
 
-        Person hunter = createHunter(800,"Ivan",150);
+        Person hunter = Person.createHunter(800,"Ivan",150);
         hunter.equip(new Foot("Ботинки",100,200));
 
-        Person dwarf = createDwarf(750, "Sergey",200);
+        Person dwarf = Person.createDwarf(750, "Sergey",200);
         dwarf.equip(new Hands("Наручи", 200, 500));
 
         dwarf.equip((Hands) null);
