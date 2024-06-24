@@ -26,7 +26,7 @@ public class OOP_interfaces {
             if (Gloves != null) {
                 hp += Gloves.hp; // если не пусто, то идет прирост ХП для персонажа
             } else {
-                hp -= hands.hp; // если снимаем, то минус ХП от предмета
+                hp -= hands.hp; // иначе, минус ХП от предмета
             }
             hands = Gloves;
         }
@@ -35,7 +35,7 @@ public class OOP_interfaces {
             if (Boots != null) {
                 hp += Boots.hp; // если не пусто, то идет прирост ХП для персонажа
             } else {
-                hp -= foot.hp; // если снимаем, то минус ХП от предмета
+                hp -= foot.hp; // иначе, минус ХП от предмета
             }
             foot = Boots;
         }
